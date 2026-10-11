@@ -141,9 +141,3 @@ real queries (joins, aggregates, subqueries, transactions, views, indexes).
 **Instructor:** Shoeb Mohammad Shahriar [SHSH]
 **Department of Computer Science and Engineering**
 **Southeast University**
-
----
-
-## 📜 License
-
-MIT &middot; see `LICENSE`.
