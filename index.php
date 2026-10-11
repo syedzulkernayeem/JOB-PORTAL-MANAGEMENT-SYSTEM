@@ -1,0 +1,8 @@
+<?php
+require 'config/database.php';$pageTitle='Job Portal Management System';
+$counts=[];foreach(['jobs','categories','applications','job_seekers'] as $table){$counts[$table]=$conn->query("SELECT COUNT(*) total FROM $table")->fetch_assoc()['total'];}
+include 'includes/header.php';
+?>
+<section class="hero-dashboard classic-home"><div class="page-head"><div><small>WELCOME TO THE PORTAL</small><h1>Job Portal Management System</h1></div><p>Professional recruitment workflow powered by PHP & MySQL</p></div><div class="hero-top"><div class="hero-image"><img src="assets/img/job-portal-hero-v2.png" alt="Professional recruitment management"></div><div class="hero-panel"><small>CAREER MANAGEMENT</small><h1>Build your<br>next chapter.</h1><p>Manage job publishing, candidate applications, recruitment decisions and appointment letters through one organized digital platform.</p></div></div><div class="quick-stats"><?php foreach(['jobs'=>'OPEN JOBS','categories'=>'CATEGORIES','applications'=>'APPLICATIONS','job_seekers'=>'JOB SEEKERS'] as $key=>$label):?><div class="quick-stat"><small><?=$label?></small><b><?=str_pad($counts[$key],2,'0',STR_PAD_LEFT)?></b><i></i></div><?php endforeach;?></div></section>
+<section class="simple-about"><small>ABOUT THE SYSTEM</small><h2>Job Portal Management System</h2><p>This platform helps companies publish jobs and allows candidates to submit complete applications with their résumés.</p><p>Administrators review applications and update each candidate’s status as Pending, Shortlisted, Selected or Rejected.</p><p>Selected candidates can accept the job offer and download their appointment letter directly from the system.</p></section>
+<?php include 'includes/footer.php';?>

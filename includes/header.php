@@ -1,0 +1,8 @@
+<?php
+$pageTitle=$pageTitle??'Job Portal Management System';$base=isset($adminPage)?'../':'';
+$current=basename($_SERVER['PHP_SELF']);$currentPath=str_replace('\\','/',$_SERVER['PHP_SELF']);
+$nav=[['users.php','USER','◉'],['job_seekers.php','JOB_SEEKER','♙'],['resumes.php','RESUME','▤'],['apply.php','APPLICATION','↗'],['jobs.php','JOB','▣'],['categories.php','CATEGORY','◇'],['admin/index.php','ADMIN','◆']];
+?>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title><?=htmlspecialchars($pageTitle)?> · Job Portal Management System</title><link rel="stylesheet" href="<?=$base?>assets/css/style.css"></head><body>
+<header class="topbar"><button class="menu-toggle" onclick="document.body.classList.toggle('nav-open')">☰</button><a class="brand" href="<?=$base?>index.php"><span class="brand-mark">JP</span><span class="brand-copy"><strong>Job Portal</strong><small>Management System</small></span></a><div class="top-status"><i></i><span>Database connected</span></div><a class="apply-btn" href="<?=$base?>apply.php">Apply now <b>→</b></a></header>
+<div class="layout"><aside class="sidebar"><div class="sidebar-title"><small>PROJECT DATABASE</small><span>7 ACTIVE ENTITIES</span></div><nav><?php foreach($nav as [$url,$label,$icon]):$active=($current===basename($url))||($label==='ADMIN'&&str_contains($currentPath,'/admin/'));?><a class="<?=$active?'active':''?>" href="<?=$base.$url?>"><b><?=$icon?></b><span><?=$label?></span><i>›</i></a><?php endforeach;?></nav></aside><div class="overlay" onclick="document.body.classList.remove('nav-open')"></div><main class="content">

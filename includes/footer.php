@@ -1,0 +1,1 @@
+</main></div><footer><div><strong>JOB PORTAL MANAGEMENT SYSTEM</strong><span>A PROFESSIONAL WEB-BASED ACADEMIC PROJECT</span></div><div class="developer"><small>DEVELOPED BY</small><strong>Syed Asaduzzaman & Syed Zulker Nayeem</strong><span>SECTION 17 · DEPARTMENT OF CSE, SEU</span></div></footer><script src="<?=$base?>assets/js/app.js"></script></body></html>
